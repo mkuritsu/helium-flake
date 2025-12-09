@@ -8,17 +8,17 @@
   sourcesMap = version: {
     "x86_64-linux" = {
       url = "https://github.com/imputnet/helium-linux/releases/download/${version}/helium-${version}-x86_64.AppImage";
-      hash = "sha256-PwXgpmauBN6EXoZE6HnpgrisrO5a9VzQEDv3T2OsPnc=";
+      hash = "sha256-rYxAOGgjEP7/LZS3z3C3XodsV+TkDl3p3VbdSozHFfY=";
     };
     "aarch64-linux" = {
       url = "https://github.com/imputnet/helium-linux/releases/download/${version}/helium-${version}-arm64.AppImage";
-      hash = "sha256-6huaFRUyJ9zuaUVWgS6jloyObzlewusHCj1BG9F5neQ=";
+      hash = "sha256-zOMZlg0vUjgZnmHoiZTs3QmvC37vXWW39obhTxn41+o=";
     };
   };
 in
   appimageTools.wrapType2 rec {
-    pname = "helium-browser";
-    version = "0.7.2.1";
+    pname = "helium";
+    version = "0.7.3.1";
     src = fetchurl (sourcesMap version).${system};
 
     extraInstallCommands = let

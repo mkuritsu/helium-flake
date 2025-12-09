@@ -12,8 +12,8 @@
     eachSystem = fn: nixpkgs.lib.genAttrs systems (system: fn nixpkgs.legacyPackages.${system});
   in {
     packages = eachSystem (pkgs: rec {
-      default = helium-browser;
-      helium-browser = pkgs.callPackage ./package.nix {};
+      default = helium;
+      helium = pkgs.callPackage ./package.nix {};
     });
   };
 }
